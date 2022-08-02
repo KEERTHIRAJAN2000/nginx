@@ -41,7 +41,8 @@ spec:
          inputs:
             targetFolder: '$(Build.ArtifactStagingDirectory)'    
  
-       - task: PublishBuildArtifacts@1    
-         displayName: 'Publish Artifact: drop'
+       - task: PublishBuildArtifacts@1
+         displayName: 'Publish Artifact'
          inputs:
             PathtoPublish: '$(build.artifactstagingdirectory)'
+            condition: succeededOrFailed()
