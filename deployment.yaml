@@ -36,13 +36,9 @@ spec:
 
         - containerPort: 80
         
-        
-       - task: CopyFiles@2
-         inputs:
-            targetFolder: '$(Build.ArtifactStagingDirectory)'    
- 
-       - task: PublishBuildArtifacts@1
-         displayName: 'Publish Artifact'
-         inputs:
-            PathtoPublish: '$(build.artifactstagingdirectory)'
-            condition: succeededOrFailed()
+           
+ - task: PublishBuildArtifacts@1
+   displayName: 'Publish Artifact'
+   inputs:
+     PathtoPublish: '$(build.artifactstagingdirectory)'
+   condition: succeededOrFailed()
