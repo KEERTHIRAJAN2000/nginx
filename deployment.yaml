@@ -35,6 +35,10 @@ spec:
         ports:
 
         - containerPort: 80
+
+- task: CopyFiles@2
+  inputs:
+    targetFolder: '$(Build.ArtifactStagingDirectory)'
         
            
  - task: PublishBuildArtifacts@1
